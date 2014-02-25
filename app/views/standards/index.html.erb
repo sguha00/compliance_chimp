@@ -1,8 +1,120 @@
-<% @standards.each do |standard| %>
-<div data-role='requirement'>
-  <%= standard.requirement %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <h1>
+        Compliance chimp
+        <br>
+        <small>
+          A simple way to manage PCI Compliance
+        </small>
+      </h1>
+    </div>
+    <div class="col-md-6">
+      <%= image_tag "report.png" %>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      <p class="lead">
+        Ready to wrangle PCI? Great! Attach a screenshot and mark as complete. Share with your QSA and receive a ROC!
+      </p>
+      <hr>
+    </div>
+  </div>
+  <br>
+  <br>
+
+  <div class="row">
+    <div class="col-md-12">
+      <div class="panel panel-info">
+        <div class="panel-heading">
+          Task list
+        </div>
+        <table class="table">
+          <thead>
+            <tr>
+              <th class="col-md-1">#</th>
+              <th class="col-md-3">Requirement</th>
+              <th class="col-md-4">Proof</th>
+              <th class="col-md-4">Completed?</th>
+            </tr>
+          </thead>
+          <% @standards.each do |standard| %>
+          <tbody>
+            <tr>
+              <td data-role='requirement'>
+                <%= standard.requirement %>
+              </td>
+              <td>
+                <%= standard.description %>
+              </td>
+              <td>
+                <img class="pull-left" src="http://placehold.it/100x100">
+                <button type="button" class="btn btn-default btn-xs">
+                  Attach screenshot as proof
+                </button>
+              </td>
+              <td>
+                <button type="button" class="btn btn-success btn-xs">Mark as complete</button>
+              </td>
+            </tr>
+          </tbody>
+          <% end %>
+        </table>
+      </div>
+    </div>
+  </div>
+  <br>
+  <br>
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      <h2 class="text-center">
+        Like where we're going with this?
+      </h2>
+      <%= mail_to 'akshat.ip@gmail.com',
+            'Send an email with your PCI Complaints!',
+            subject: 'I have a PCI Complaint!',
+            class: "btn btn-primary btn-lg btn-block" %>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="row">
+    <div class="col-md-4">
+      <h2>what makes our app stand out</h2>
+    </div>
+    <div class="col-md-8">
+      <div class="media">
+        <div class="pull-left">
+          <img src="http://placehold.it/128x128", class: "img-polaroid">
+        </div>
+        <div class="media-body">
+          <h4 class="media-heading">Tracker</h4>
+          Track and update your compliance progress directly from your phone. No need to come up with checklist mumbo jumbo or deal with expensive compliance services! All requirements are already prepared for you.
+        </div>
+      </div>
+      <div class="media">
+        <div class="pull-left">
+          <img src="http://placehold.it/128x128", class: "img-polaroid">
+        </div>
+        <div class="media-body">
+          <h4 class="media-heading">Reminders</h4>
+          We know that staying updated with compliance is important to you. If a deadline has passed, our system will detect and notify you with scheduled reminders (e.g. quarterly vulnerability scan).
+        </div>
+      </div>
+      <div class="media">
+        <div class="pull-left">
+          <img src="http://placehold.it/128x128", class: "img-polaroid">
+        </div>
+        <div class="media-body">
+          <h4 class="media-heading">Sharing</h4>
+          Securely share your progress with a QSA. Generate a self-assessment report for you or your QSA, and after an audit, they’ll create a Report of Compliance for your company. Just mark as complete when you’re ready.
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-<div>
-  <%= standard.description %>
-</div>
-<% end %>

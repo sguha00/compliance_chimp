@@ -5,5 +5,5 @@
 <% if user_signed_in? %>
   <li><%= link_to 'Logout', signout_path %></li>
 <% else %>
-  <li><%= link_to 'Login', signin_path %></li>
+  <li><%= link_to 'login/register', signin_path %></li>
 <% end %>

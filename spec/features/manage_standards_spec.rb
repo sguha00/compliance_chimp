@@ -7,8 +7,8 @@ feature 'View the PCI Standards' do
     2.times do
       create(:standard)
     end
-    visit standards_path
-    expect(page).to have_css 'div', text: '1.1.1'
+    visit root_path
+    expect(page).to have_css '[data-role="requirement"]', text: '1.1.1'
     expect(page).to have_css '[data-role="requirement"]', text: '1.1.2'
   end
 end
