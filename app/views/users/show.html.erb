@@ -1,4 +1,42 @@
-<h3>User</h3>
-<p>User: <%= @user.name %></p>
-<p>Email: <%= @user.email if @user.email %></p>
-<%= link_to 'Edit account', edit_user_path %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="panel panel-info">
+        <div class="panel-heading">
+          Task list
+        </div>
+        <table class="table">
+          <thead>
+            <tr>
+              <th class="col-md-1">#</th>
+              <th class="col-md-3">Requirement</th>
+              <th class="col-md-4">Proof</th>
+              <th class="col-md-4">Completed?</th>
+            </tr>
+          </thead>
+          <% @standards.each do |standard| %>
+          <tbody>
+            <tr>
+              <td data-role="standard">
+                <%= standard.name %>
+              </td>
+              <td>
+                <%= standard.description %>
+              </td>
+              <td>
+                <img class="pull-left" src="http://placehold.it/100x100">
+                <button type="button" class="btn btn-default btn-xs">
+                  Attach screenshot as proof
+                </button>
+              </td>
+              <td>
+                <button type="button" class="btn btn-success btn-xs">Mark as complete</button>
+              </td>
+            </tr>
+          </tbody>
+          <% end %>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

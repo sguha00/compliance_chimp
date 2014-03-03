@@ -20,6 +20,7 @@ feature 'Manage requirements' do
       create(:standard, name: "1.1.#{n}")
     end
     visit signin_path
+    expect(page).to have_css '[data-role="current-user"]', text: 'Bob Raymond'
     expect(page).to have_css '[data-role="standard"]', text: '1.1.1'
     expect(page).to have_css '[data-role="standard"]', text: '1.1.2'
   end
