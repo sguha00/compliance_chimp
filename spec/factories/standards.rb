@@ -2,8 +2,5 @@
 
 FactoryGirl.define do
   factory :standard do
-    sequence(:requirement) do |n|
-      "1.1.#{n}"
-    end
   end
 end
