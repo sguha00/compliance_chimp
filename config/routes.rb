@@ -5,5 +5,7 @@ ComplianceChimp::Application.routes.draw do
   match '/signin' => 'sessions#new', :as => :signin
   match '/signout' => 'sessions#destroy', :as => :signout
   match '/auth/failure' => 'sessions#failure'
-  resources :standards, only: [:index]
+  resources :standards, only: :index do
+    resources :proofs, only: [:new, :create], shallow: true
+  end
 end

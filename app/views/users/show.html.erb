@@ -3,15 +3,15 @@
     <div class="col-md-12">
       <div class="panel panel-info">
         <div class="panel-heading">
-          Task list
+          Requirements
         </div>
         <table class="table">
           <thead>
             <tr>
               <th class="col-md-1">#</th>
-              <th class="col-md-3">Requirement</th>
+              <th class="col-md-3">Description</th>
+              <th class="col-md-4">Note</th>
               <th class="col-md-4">Proof</th>
-              <th class="col-md-4">Completed?</th>
             </tr>
           </thead>
           <% @standards.each do |standard| %>
@@ -24,13 +24,17 @@
                 <%= standard.description %>
               </td>
               <td>
-                <img class="pull-left" src="http://placehold.it/100x100">
-                <button type="button" class="btn btn-default btn-xs">
-                  Attach screenshot as proof
-                </button>
+
               </td>
               <td>
-                <button type="button" class="btn btn-success btn-xs">Mark as complete</button>
+                <div>
+                  <%= link_to "Attach proof",
+                      new_standard_proof_path(standard, @proof),
+                      class: "btn btn-success btn-xs" %>
+                </div>
+                <div>
+                  <img class="pull-left" src="<%= standard.proof.image_url if standard.proof %>">
+                </div>
               </td>
             </tr>
           </tbody>
