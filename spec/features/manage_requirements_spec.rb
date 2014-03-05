@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-feature 'Manage requirements' do
+feature 'Manage proofs' do
   background do
     OmniAuth.config.test_mode = true
     OmniAuth.config.mock_auth[:github] = {
@@ -14,7 +14,7 @@ feature 'Manage requirements' do
   end
 
   # Given user is logged in
-  # Then user should see PCI Standards
+  # Then user expects to see PCI Standards
   scenario 'user views all standards' do
     (1..2).each do |n|
       create(:standard, name: "1.1.#{n}")
@@ -23,5 +23,17 @@ feature 'Manage requirements' do
     expect(page).to have_css '[data-role="current-user"]', text: 'Bob Raymond'
     expect(page).to have_css '[data-role="standard"]', text: '1.1.1'
     expect(page).to have_css '[data-role="standard"]', text: '1.1.2'
+  end
+
+  # Given user is logged in and on users#show
+  # When user adds a proof
+  # Then user expects to see the proof image on users#show
+  scenario 'user adds a new proof image' do
+    create(:standard, name: "1.1.1")
+    visit signin_path
+    click_link 'Attach proof'
+    fill_in 'proof_image_url', with: 'http://www.imgur.com/1.1.1.png'
+    click_button 'Submit'
+    expect(page).to have_xpath '//img[@src="http://www.imgur.com/1.1.1.png"]'
   end
 end
