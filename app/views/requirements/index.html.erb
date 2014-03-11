@@ -42,14 +42,14 @@
               <th class="col-md-4">Proof</th>
             </tr>
           </thead>
-          <% @standards.each do |standard| %>
+          <% @requirements.each do |requirement| %>
           <tbody>
             <tr>
-              <td data-role="standard">
-                <%= standard.name %>
+              <td data-role="requirement">
+                <%= requirement.name %>
               </td>
               <td>
-                <%= standard.description %>
+                <%= requirement.description %>
               </td>
               <td>
               </td>

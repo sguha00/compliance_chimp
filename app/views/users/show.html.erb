@@ -14,14 +14,14 @@
               <th class="col-md-4">Proof</th>
             </tr>
           </thead>
-          <% @standards.each do |standard| %>
+          <% @requirements.each do |requirement| %>
           <tbody>
             <tr>
-              <td data-role="standard">
-                <%= standard.name %>
+              <td data-role="requirement">
+                <%= requirement.name %>
               </td>
               <td>
-                <%= standard.description %>
+                <%= requirement.description %>
               </td>
               <td>
 
@@ -29,11 +29,11 @@
               <td>
                 <div>
                   <%= link_to "Attach proof",
-                      new_standard_proof_path(standard, @proof),
+                      new_requirement_proof_path(requirement, @proof),
                       class: "btn btn-success btn-xs" %>
                 </div>
                 <div>
-                  <img class="pull-left" src="<%= standard.proof.image_url if standard.proof %>">
+                  <img class="pull-left" src="<%= requirement.proof.image_url if requirement.proof %>">
                 </div>
               </td>
             </tr>
