@@ -1,13 +1,13 @@
 class ProofsController < ApplicationController
 
   def new
-    @standard = Standard.find(params[:standard_id])
-    @proof = @standard.build_proof
+    @requirement = Requirement.find(params[:requirement_id])
+    @proof = @requirement.build_proof
   end
 
   def create
-    @standard = Standard.find(params[:standard_id])
-    @proof = @standard.create_proof(params[:proof])
+    @requirement = Requirement.find(params[:requirement_id])
+    @proof = @requirement.create_proof(params[:proof])
 
     respond_to do |format|
       if @proof.save
@@ -17,5 +17,4 @@ class ProofsController < ApplicationController
       end
     end
   end
-
 end
