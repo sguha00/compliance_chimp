@@ -1,8 +1,16 @@
-Compliance Chimp
-=========
+### Compliance chimp ###
 
-This application was generated with the [rails_apps_composer](https://github.com/RailsApps/rails_apps_composer) gem
-provided by the [RailsApps Project](http://railsapps.github.io/).
+[complete requirements](http://www.ComplianceChimp.com) | [suggest a new idea](https://github.com/akshatpradhan/compliance_chimp/issues) |
+[get running locally](https://github.com/akshatpradhan/compliance_chimp/wiki)
+
+A simple way to manage PCI Compliance.
+
+
+![Screenshot](https://raw.github.com/akshatpradhan/compliance_chimp/master/ComplianceChimp.png)
+
+
+Copyright 2013 Compliance chimp
+
 
 Diagnostics
 -----------
@@ -102,7 +110,7 @@ Email delivery is disabled in development.
 Getting Started
 ---------------
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+See wiki.
 
 Documentation and Support
 -------------------------
@@ -111,12 +119,12 @@ This is the only documentation.
 
 #### Issues
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+See Github issues.
 
 Similar Projects
 ----------------
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+None
 
 Contributing
 ------------
@@ -135,9 +143,9 @@ me and I’ll add a note to the README so that others can find your work.
 Credits
 -------
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+http://linkedin.com/in/akshatpradhan
 
 License
 -------
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+GPL v3 licensed! See License.TXT
