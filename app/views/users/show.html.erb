@@ -26,14 +26,14 @@
               <td>
 
               </td>
-              <td>
+              <td data-role="<%= requirement.name %>-proof">
                 <div>
                   <%= link_to "Attach proof",
-                      new_requirement_proof_path(requirement, @proof),
+                      new_requirement_proof_path(requirement),
                       class: "btn btn-success btn-xs" %>
                 </div>
                 <div>
-                  <img class="pull-left" src="<%= requirement.proof.image_url if requirement.proof %>">
+                  <%= img_for_user_proof(requirement) %>
                 </div>
               </td>
             </tr>

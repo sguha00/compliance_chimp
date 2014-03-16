@@ -5,6 +5,7 @@ class User
   field :uid, type: String
   field :name, type: String
   field :email, type: String
+  has_many :proofs
   attr_accessible :role_ids, :as => :admin
   attr_accessible :provider, :uid, :name, :email
   validates_presence_of :name
