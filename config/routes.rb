@@ -1,5 +1,5 @@
 ComplianceChimp::Application.routes.draw do
-  root :to => "requirements#index"
+  root :to => "home#index"
   resources :requirements, only: :index do
     resources :proofs, only: [:new, :create], shallow: true
   end

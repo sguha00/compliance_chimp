@@ -7,11 +7,11 @@ class ProofsController < ApplicationController
 
   def create
     @requirement = Requirement.find(params[:requirement_id])
-    @proof = @requirement.proofs.create(params[:proof])
+    @proof = @requirement.proofs.build(params[:proof])
 
     respond_to do |format|
       if @proof.save
-        format.html { redirect_to user_url(current_user), notice: 'Proof was successfully attached.' }
+        format.html { redirect_to requirements_url, notice: 'Proof was successfully attached.' }
       else
         format.html { render action: "new" }
       end
