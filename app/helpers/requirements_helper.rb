@@ -1,6 +1,5 @@
 module RequirementsHelper
-  def img_for_user_proof(requirement)
-    proof = requirement.user_proof(current_user)
-    content_tag(:img, nil, src: h(proof.image_url), class: "pull-left") if proof
+  def img_of_proof_for(requirement)
+    content_tag(:img, nil, src: h(requirement.proof_for(current_user).image_url), class: "pull-left")
   end
 end

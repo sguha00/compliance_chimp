@@ -27,14 +27,21 @@
 
               </td>
               <td data-role="<%= requirement.name %>-proof">
-                <div>
-                  <%= link_to "Attach proof",
-                      new_requirement_proof_path(requirement),
-                      class: "btn btn-success btn-xs" %>
-                </div>
-                <div>
-                  <%= img_for_user_proof(requirement) %>
-                </div>
+                <% if requirement.proof_for(current_user) %>
+                  <div>
+                    <%= link_to "Update proof",
+                        edit_proof_path(requirement.proof_for(current_user)),
+                        title: "Update proof for #{requirement.name}" %>
+                    <%= img_of_proof_for(requirement) %>
+                  </div>
+                <% else %>
+                  <div>
+                    <%= link_to "Attach proof",
+                        new_requirement_proof_path(requirement),
+                        class: "btn btn-success btn-xs",
+                        title: "Attach proof for #{requirement.name}" %>
+                  </div>
+                <% end %>
               </td>
             </tr>
           </tbody>
