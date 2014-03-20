@@ -21,8 +21,8 @@ feature 'Manage proofs' do
   end
 
   describe "user browsing requirements and proofs" do
-    # Then user expects to see requirements and proofs
-    scenario 'user views all requirements and proofs' do
+    # Then user expects to see requirements and proofs he has submitted
+    scenario 'user sees requirements and proofs he has submitted' do
       expect(page).to have_css '[data-role="current-user"]', text: user.name
       expect(page).to have_xpath "//img[@src='#{proof.image_url}']"
       expect(page).to have_css '[data-role="requirement"]', text: '1.1.1'
@@ -51,8 +51,8 @@ feature 'Manage proofs' do
         click_button 'Submit'
         expect(page).to have_xpath '//img[@src="http://www.imgur.com/1.1.1-updated_today.png"]'
       end
-      # Then user should not be able to add a new proof
-      scenario "should not see an 'Attach proof' link" do
+      # Then user expects not to be able to add a new proof
+      scenario "expects not to be able to add a new proof" do
         expect(page).not_to have_link "Attach proof for 1.1.1"
       end
     end
