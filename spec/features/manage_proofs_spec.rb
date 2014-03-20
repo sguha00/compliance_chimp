@@ -1,10 +1,12 @@
 require 'spec_helper'
 
 feature 'Manage proofs' do
-  given!(:user) {create(:user)}
-  given!(:requirement1) {create(:requirement, name: "1.1.1")}
-  given!(:requirement2) {create(:requirement, name: "1.1.2")}
-  given!(:proof)        {create(:proof, user: user, requirement: requirement1)}
+  given!(:user)           {create(:user)}
+  given!(:other_user)     {create(:user)}
+  given!(:requirement1)   {create(:requirement, name: "1.1.1")}
+  given!(:requirement2)   {create(:requirement, name: "1.1.2")}
+  given!(:proof)          {create(:proof, user: user, requirement: requirement1)}
+  given!(:proof_by_other) {create(:proof, user: other_user, requirement: requirement1)}
 
   # Given user is logged in
   background do
@@ -29,6 +31,10 @@ feature 'Manage proofs' do
     # Then user expects to see proofs he has submitted
     scenario 'user expects to see proofs he has submitted' do
       expect(page).to have_xpath "//img[@src='#{proof.image_url}']"
+    end
+    # Then user expects not to see proofs submitted by others
+    scenario 'user expects not to see proofs submitted by others' do
+      expect(page).not_to have_xpath "//img[@src='#{proof_by_other.image_url}']"
     end
   end
 
