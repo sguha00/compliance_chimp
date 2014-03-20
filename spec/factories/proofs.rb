@@ -2,6 +2,6 @@
 
 FactoryGirl.define do
   factory :proof do
-    image_url 'http://www.imgur.com/1.1.1.png'
+    sequence(:image_url) {|i| "http://www.imgur.com/1.1.#{i}.png"}
   end
 end
