@@ -4,7 +4,7 @@ class Requirement
   field :description, type: String
   has_many :proofs
 
-  def user_proof(user)
+  def proof_for(user)
     proofs.where(user: user).first
   end
 end
