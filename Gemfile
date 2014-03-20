@@ -19,8 +19,8 @@ gem 'simple_form'
 gem 'thin'
 gem 'redcarpet'
 gem 'filepicker-rails'
-gem "httparty"
-
+gem 'httparty'
+gem 'lazy_high_charts'
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_19, :mri_20, :rbx]
@@ -38,6 +38,7 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'rspec-rails'
   gem 'jazz_hands'
+  gem "poltergeist", github: "jonleighton/poltergeist"
 end
 group :test do
   gem 'capybara'

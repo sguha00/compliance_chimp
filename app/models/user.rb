@@ -22,4 +22,8 @@ class User
     end
   end
 
+  def proofs_count
+    proofs.count
+  end
+
 end
