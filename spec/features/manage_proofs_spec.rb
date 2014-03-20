@@ -21,12 +21,14 @@ feature 'Manage proofs' do
   end
 
   describe "user browsing requirements and proofs" do
-    # Then user expects to see requirements and proofs he has submitted
-    scenario 'user sees requirements and proofs he has submitted' do
-      expect(page).to have_css '[data-role="current-user"]', text: user.name
-      expect(page).to have_xpath "//img[@src='#{proof.image_url}']"
+    # Then user expects to see all requirements
+    scenario 'user sees all requirements' do
       expect(page).to have_css '[data-role="requirement"]', text: '1.1.1'
       expect(page).to have_css '[data-role="requirement"]', text: '1.1.2'
+    end
+    # Then user expects to see proofs he has submitted
+    scenario 'user sees proofs he has submitted' do
+      expect(page).to have_xpath "//img[@src='#{proof.image_url}']"
     end
   end
 
