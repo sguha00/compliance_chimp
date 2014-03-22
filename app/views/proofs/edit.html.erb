@@ -1,13 +1,10 @@
+<h1>Editing proof for Requirement <%= @proof.requirement_name %></h1>
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <%= form_for(@proof) do |form| %>
-      <div>
-        <%= form.label :image_url %>
-        <%= form.text_field :image_url %>
-        <%= form.submit 'Submit' %>
-      </div>
-      <% end %>
+      <%= render "form", proof: @proof %>
     </div>
   </div>
 </div>
+
+<%= render 'current_proof_image', requirement: @proof.requirement, placeholder: true %>

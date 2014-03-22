@@ -1,0 +1,5 @@
+<%= form_for(proof, role: "form") do |form| %>
+  <%= form.filepicker_field :filepicker_url, services: "COMPUTER", button_class: "btn btn-default" %>
+  <%= form.submit "Submit", class: "btn btn-default" %>
+  <%= link_to "Cancel", :back, class: "btn btn-warning" %>
+<% end %>

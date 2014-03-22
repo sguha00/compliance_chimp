@@ -18,6 +18,8 @@ end
 module ComplianceChimp
   class Application < Rails::Application
 
+    config.filepicker_rails.api_key = ENV["FILEPICKER_API_KEY"]
+
     # don't generate RSpec tests for views and helpers
     config.generators do |g|
       
