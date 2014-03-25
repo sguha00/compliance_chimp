@@ -1,16 +1,59 @@
 ### Compliance chimp ###
 
-[complete requirements](http://www.ComplianceChimp.com) | [suggest a new idea](https://github.com/akshatpradhan/compliance_chimp/issues) |
-[get running locally](https://github.com/akshatpradhan/compliance_chimp/wiki)
+[get started](http://www.ComplianceChimp.com) | [suggest a feature](https://github.com/akshatpradhan/compliance_chimp/issues) |
+[install locally](https://github.com/akshatpradhan/compliance_chimp/wiki)
 
-A simple way to manage PCI Compliance.
+A workflow tool to manage PCI Compliance easily
 
 
 ![Screenshot](https://raw.github.com/akshatpradhan/compliance_chimp/master/ComplianceChimp.png)
 
 
+Credits
+-------
+
+http://www.linkedin.com/in/akshatpradhan
+
+License
+-------
+
+GNU Affero General Public License v3 (AGPL-3.0)!
+
+See [LICENSE.txt](https://raw.githubusercontent.com/akshatpradhan/compliance_chimp/master/LICENSE.txt)
+
 Copyright 2013 Compliance chimp
 
+Getting Started
+---------------
+
+See wiki.
+
+Documentation and Support
+-------------------------
+
+This is the only documentation.
+
+#### Issues
+
+See Github issues.
+
+Similar Projects
+----------------
+
+http://www.ServiceNow.com
+
+Contributing
+------------
+
+If you make improvements to this application, please share with others.
+
+-   Fork the project on GitHub.
+-   Make your feature addition or bug fix.
+-   Commit with Git.
+-   Send Compliance chimp a pull request.
+
+If you add functionality to this application, create an alternative
+implementation, or build an application that is similar, please file a Github issue and we’ll add a note to the README so that others can find your work.
 
 Diagnostics
 -----------
@@ -89,6 +132,9 @@ Database
 
 This application uses MongoDB with the Mongoid ORM.
 
+`brew install mongodb`
+
+
 Development
 -----------
 
@@ -106,46 +152,3 @@ Email
 The application is configured to send email using a Mandrill account.
 
 Email delivery is disabled in development.
-
-Getting Started
----------------
-
-See wiki.
-
-Documentation and Support
--------------------------
-
-This is the only documentation.
-
-#### Issues
-
-See Github issues.
-
-Similar Projects
-----------------
-
-None
-
-Contributing
-------------
-
-If you make improvements to this application, please share with others.
-
--   Fork the project on GitHub.
--   Make your feature addition or bug fix.
--   Commit with Git.
--   Send the author a pull request.
-
-If you add functionality to this application, create an alternative
-implementation, or build an application that is similar, please contact
-me and I’ll add a note to the README so that others can find your work.
-
-Credits
--------
-
-http://linkedin.com/in/akshatpradhan
-
-License
--------
-
-GPL v3 licensed! See License.TXT
