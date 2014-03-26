@@ -3,6 +3,12 @@
   <li data-role="current-user">
     <%= link_to "How's it going, #{current_user.name}", requirements_path %>
   </li>
+  <li>
+    <%= link_to "PCI Assessment", requirements_path %>
+  </li>
+  <li>
+    <%= link_to "Forum", "http://discuss.compliancechimp.com" %>
+  </li>
 <% end %>
 <% if user_signed_in? %>
   <li><%= link_to 'Logout', signout_path %></li>
