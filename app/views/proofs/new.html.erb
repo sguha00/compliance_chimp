@@ -1,10 +1,15 @@
-<h1>New proof for Requirement <%= @requirement.name %></h1>
 <div class="container">
   <div class="row">
-    <div class="col-md-12">
+    <div class="col-md-4">
+      <br>
+      <br>
+      <%= render 'current_proof_image', requirement: @requirement, placeholder: true %>
+    </div>
+    <div class="col-md-6">
+      <h3>Attach screenshot for Requirement <%= @requirement.name %></h3>
+      <p><%= @requirement.description %></h1></p>
+      <br>
       <%= render "form", proof: [@requirement, @proof] %>
     </div>
   </div>
 </div>
-
-<%= render 'current_proof_image', requirement: @requirement, placeholder: true %>

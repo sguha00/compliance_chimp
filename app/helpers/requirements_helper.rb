@@ -1,6 +1,6 @@
 module RequirementsHelper
   def img_of_proof_for(requirement, placeholder=false)
-    filepicker_image_tag src_for_img_of_proof_for(requirement, placeholder), {w: 160, h: 160, fit: 'clip'}, {id: "#{requirement.name.gsub(/\./, "-")}-image"}
+    filepicker_image_tag src_for_img_of_proof_for(requirement, placeholder), {w: 320, h: 320, fit: 'clip'}, {id: "#{requirement.name.gsub(/\./, "-")}-image"}
   end
 
   def src_for_img_of_proof_for(requirement, placeholder=false)

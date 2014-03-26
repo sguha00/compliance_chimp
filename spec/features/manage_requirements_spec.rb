@@ -24,7 +24,6 @@ feature 'Manage proofs' do
   scenario 'user views all requirements and proofs' do
     expect(page).to have_css '[data-role="current-user"]', text: user.name
     expect(find("#1-1-1-image")['src']).to include(proof.filepicker_url)
-
     expect(page).to have_css '[data-role="requirement"]', text: '1.1.1'
     expect(page).to have_css '[data-role="requirement"]', text: '1.1.2'
   end
