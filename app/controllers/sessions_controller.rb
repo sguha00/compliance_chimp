@@ -16,6 +16,8 @@ class SessionsController < ApplicationController
     user.add_role :admin if User.count == 1 # make the first user an admin
     if user.email.blank?
       redirect_to edit_user_path(user), :alert => "Please enter your email address."
+    elsif user.name.blank?
+      redirect_to edit_user_path(user), :alert => "Please enter your name."
     else
       redirect_to requirements_url, notice: 'Signed in!'
     end
