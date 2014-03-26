@@ -4,7 +4,7 @@ class Requirement
   field :description, type: String
   has_many :proofs
 
-  def self.fulfillment_chart_for(user)
+  def self.assessment_chart_for(user)
     LazyHighCharts::HighChart.new('pie') do |chart|
       chart.options[:chart][:defaultSeriesType] = "pie"
       chart.options[:chart][:height] = 210
@@ -14,12 +14,12 @@ class Requirement
       })
       chart.series({
                      name: 'Total',
-                     data: complete_and_incomplete_series_for(user)
+                     data: completed_and_incompleted_for(user)
                    })
     end
   end
 
-  def self.complete_and_incomplete_series_for(user)
+  def self.completed_and_incompleted_for(user)
     RequirementSeries.new(user).render
   end
 
