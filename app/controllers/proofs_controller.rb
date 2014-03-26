@@ -30,7 +30,11 @@ class ProofsController < ApplicationController
   def update
     @proof = Proof.find(params[:id])
     @proof.user = current_user
+    old_filepicker_url = @proof.filepicker_url_was if @proof.filepicker_url != params[:proof][:filepicker_url]
+    complete_delete_url = old_filepicker_url+"?key=#{ENV["FILEPICKER_API_KEY"]}"
+    logger.info "deleting file = " + complete_delete_url
     respond_to do |format|
+      HTTParty.delete(complete_delete_url)
       if @proof.update_attributes(params[:proof])
         format.html { redirect_to requirements_url, notice: 'Proof was successfully updated.' }
       else
