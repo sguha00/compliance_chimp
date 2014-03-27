@@ -49,7 +49,7 @@ class RequirementSeries
   end
 
   def percentage(n)
-    (n.to_f / total) * 100
+    ((n.to_f / total) * 100).round(1)
   end
 
   def total
