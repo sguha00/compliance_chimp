@@ -39,11 +39,12 @@ feature 'User registration' do
     scenario "user is invited to fill in his name" do
       expect(page).to have_content "Please enter your name."
     end
-    scenario "user fills in his name and completes registration" do
+    scenario "user completes registration and is redirected to requirements#index" do
       fill_in "user_name", with: "Lename"
       click_button "Update"
       expect(page).to have_content "Your profile has been successfully updated!"
       expect(page).to have_content "Lename"
+      expect(page.current_path).to eq(requirements_path)
     end
   end
 end
