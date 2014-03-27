@@ -28,6 +28,11 @@ feature 'Manage proofs' do
     expect(page).to have_css '[data-role="requirement"]', text: '1.1.2'
   end
 
+  # Then user expects to see a requirements fulfilling status pie chart
+  scenario 'user expects to see a requirements fulfilling status pie chart', js: true do
+    expect(page).to have_css '[data-highcharts-chart]'
+  end
+
   context "for requirements with no proof" do
     # When user adds a proof
     # Then user expects to see the proof image
