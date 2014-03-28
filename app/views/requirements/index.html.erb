@@ -37,12 +37,13 @@
               <% end %>
               </td>
               <td data-role="<%= requirement.name %>-proof">
-                <% if requirement.proof_for(current_user) %>
+                <% if proof = requirement.proof_for(current_user) %>
                   <div>
                     <%= link_to "Update proof",
-                        edit_proof_path(requirement.proof_for(current_user)),
+                        edit_proof_path(proof),
                         title: "Update proof for #{requirement.name}" %>
-                    <%= img_of_proof_for(requirement) %>
+                    <p><%= img_of_proof_for(requirement) %></p>
+                    <small>Updated <%= time_ago_in_words(proof.updated_at) %> ago</small>
                   </div>
                 <% else %>
                   <div>
