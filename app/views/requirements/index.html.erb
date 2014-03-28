@@ -32,7 +32,9 @@
                 <%= markdown(requirement.description) %>
               </td>
               <td>
-
+              <% if proof = requirement.proof_for(current_user) %>
+                <%= proof.note %>
+              <% end %>
               </td>
               <td data-role="<%= requirement.name %>-proof">
                 <% if requirement.proof_for(current_user) %>

@@ -2,7 +2,8 @@ class Proof
   include Mongoid::Document
   include Mongoid::Timestamps
   field :filepicker_url, type: String
-  attr_accessible :filepicker_url
+  field :note, type: String
+  attr_accessible :filepicker_url, :note
   belongs_to :requirement
   belongs_to :user
 
