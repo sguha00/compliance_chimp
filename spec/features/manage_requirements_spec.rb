@@ -62,4 +62,21 @@ feature 'Manage proofs' do
       expect(page).not_to have_link "Attach proof for 1.1.1"
     end
   end
+
+  # When I click Share with QSA
+  # Then I expect to see a PDF with completed and incomplete requirements
+  scenario "generates a PDF file with Requirements/Proofs assessment" do
+    click_on "Share with QSA"
+    expect(page.response_headers["Content-Type"]).to match(/application\/pdf/)
+    convert_pdf_to_page
+    expect(page).to have_content("Current PCI Assessment")
+  end
+
+  def convert_pdf_to_page
+    temp_pdf = Tempfile.new('pdf')
+    temp_pdf << page.source.force_encoding('UTF-8')
+    reader = PDF::Reader.new(temp_pdf)
+    pdf_text = reader.pages.map(&:text)
+    page.driver.response.instance_variable_set('@body', pdf_text)
+  end
 end
