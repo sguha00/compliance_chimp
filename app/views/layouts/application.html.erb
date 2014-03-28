@@ -8,6 +8,7 @@
     <%= javascript_include_tag "application" %>
     <%= filepicker_js_include_tag %>
     <%= csrf_meta_tags %>
+    <%= analytics_init if Rails.env.production? %>
   </head>
   <body>
     <header>
