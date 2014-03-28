@@ -7,7 +7,9 @@
     </div>
     <div class="col-md-6">
       <h3>Update screenshot for Requirement <%= @proof.requirement_name %></h3>
-      <br>
+      <p>
+        Updated <%= time_ago_in_words(@proof.updated_at) %> ago
+      </p>
       <%= render "form", proof: @proof %>
     </div>
   </div>
