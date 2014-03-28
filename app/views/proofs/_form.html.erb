@@ -1,5 +1,5 @@
 <%= form_for(proof, role: "form") do |form| %>
-  <%= link_to "Cancel", :back, class: "btn btn-default" %>
+  <%= link_to "Cancel", requirements_path, class: "btn btn-default cancel-proof-changes" %>
   <%= form.filepicker_field :filepicker_url, services: "COMPUTER", button_class: "btn btn-default" %>
   <%= form.submit "Submit", class: "btn btn-primary" %>
 <% end %>
