@@ -21,6 +21,7 @@ gem 'redcarpet'
 gem 'filepicker-rails'
 gem 'httparty'
 gem 'lazy_high_charts'
+gem 'prawn'
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_19, :mri_20, :rbx]
@@ -38,7 +39,8 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'rspec-rails'
   gem 'jazz_hands'
-  gem "poltergeist", github: "jonleighton/poltergeist"
+  gem 'poltergeist', github: "jonleighton/poltergeist"
+  gem 'pdf-reader'
 end
 group :test do
   gem 'capybara'
