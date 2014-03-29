@@ -26,4 +26,7 @@ class User
     proofs.count
   end
 
+  def name_and_email
+    name + " (#{email})"
+  end
 end
