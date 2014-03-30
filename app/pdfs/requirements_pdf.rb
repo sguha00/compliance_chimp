@@ -39,11 +39,10 @@ class RequirementsPdf < Prawn::Document
   end
 
   def link_for_image_of_proof_of(requirement)
-    link = proof_of(requirement).try(:filepicker_url)
-    link ? "<link href='#{link}'><u><color rgb='0000FF'>LINK</color></u></link>" : ""
+    proof_of(requirement) ? "<link href='#{proof_of(requirement).filepicker_url}'><u><color rgb='0000FF'>LINK</color></u></link>" : ""
   end
 
   def image_for_proof(requirement)
-    proof_of(requirement) ? {image: open(proof_of(requirement).try(:filepicker_url)), scale: 0.15} : ""
+    proof_of(requirement) ? {image: open(proof_of(requirement).filepicker_url), scale: 0.15} : ""
   end
 end

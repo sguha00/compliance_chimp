@@ -8,4 +8,12 @@ class Proof
   belongs_to :user
 
   delegate :name, to: :requirement, prefix: true
+
+  validate :attached_image
+
+  private
+
+  def attached_image
+    errors.add(:base, "You must attach an image to validate this proof")
+  end
 end
