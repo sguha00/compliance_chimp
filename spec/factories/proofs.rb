@@ -2,6 +2,6 @@
 
 FactoryGirl.define do
   factory :proof do
-    filepicker_url 'http://www.imgur.com/1.1.1.png'
+    filepicker_url 'https://www.google.fr/images/srpr/logo11w.png'
   end
 end
