@@ -59,7 +59,7 @@ ComplianceChimp::Application.configure do
   config.i18n.fallbacks = true
 
   # Send deprecation notices to registered listeners
-  config.active_support.deprecation = :notify  
+  config.active_support.deprecation = :notify
 
     config.action_mailer.smtp_settings = {
       :address   => "smtp.mandrillapp.com",
@@ -77,5 +77,7 @@ ComplianceChimp::Application.configure do
   config.action_mailer.raise_delivery_errors = false
   config.action_mailer.default :charset => "utf-8"
 
+  # Google Analytics
+  GA.tracker = "UA-49505537-1"
 
 end

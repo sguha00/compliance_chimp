@@ -23,6 +23,8 @@ gem 'filepicker-rails'
 gem 'httparty'
 gem 'lazy_high_charts'
 gem 'prawn'
+gem 'google-analytics-rails'
+
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_19, :mri_20, :rbx]
