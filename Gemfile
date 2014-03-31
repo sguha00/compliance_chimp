@@ -9,6 +9,7 @@ end
 
 gem 'jquery-rails'
 gem 'bootstrap-sass', '>= 3.0.0.0'
+gem 'flat-ui-sass', github: "wingrunr21/flat-ui-sass", branch: "sass_32_support"
 gem 'cancan'
 gem 'figaro'
 gem 'mongoid'

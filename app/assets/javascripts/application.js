@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap
+//= require flat-ui-pro
 //= require highcharts/highcharts
 //= require highcharts/highcharts-more
 //= require_tree .
