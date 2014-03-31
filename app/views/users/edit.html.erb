@@ -1,8 +1,28 @@
-<%= form_for(@user) do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <br />
-  <%= f.label :email %>
-  <%= f.text_field :email %>
-  <%= f.submit "Update" %>
-<% end %>
+<div class="col-md-6 col-md-offset-4">
+  <%= form_for(@user, role: "form") do |f| %>
+    <% if f.object.errors.any? %>
+      <div class="panel panel-danger" id="error_explanation">
+        <div class="panel-heading">
+          <%= pluralize(f.object.errors.count, "error") %> prohibited
+          this post from being saved:
+        </div>
+        <div class="panel-body">
+          <ol>
+            <% f.object.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+          </ol>
+        </div>
+      </div>
+    <% end %>
+    <div class="form-group">
+      <%= f.label :name %>
+      <%= f.text_field :name, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :email %>
+      <%= f.text_field :email, class: "form-control" %>
+    </div>
+    <%= f.submit "Update", class: "btn btn-default" %>
+  <% end %>
+</div>
