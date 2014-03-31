@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '1.9.3'
+ruby '2.1.1'
 gem 'rails', '3.2.16'
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
@@ -9,6 +9,7 @@ end
 
 gem 'jquery-rails'
 gem 'bootstrap-sass', '>= 3.0.0.0'
+gem 'flat-ui-sass', github: "wingrunr21/flat-ui-sass", branch: "sass_32_support"
 gem 'cancan'
 gem 'figaro'
 gem 'mongoid'
