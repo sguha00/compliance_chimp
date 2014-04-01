@@ -17,3 +17,4 @@ OMNIAUTH_PROVIDER_KEY: Your_OmniAuth_Provider_Key
 OMNIAUTH_PROVIDER_SECRET: Your_OmniAuth_Provider_Secret
 ROLES: [admin, user, VIP]
 FILEPICKER_API_KEY: your Filepicker Api Key
+SECRET_KEY_BASE: #generate this with '$rake secret'
