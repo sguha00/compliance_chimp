@@ -1,17 +1,17 @@
 require 'spec_helper'
 
 feature 'User registration' do
-  given(:user)         {create(:user)}
-  given(:unnamed_user) {create(:user, name: "")}
+  given(:user)                  {create(:user)}
+  given(:user_with_blank_email) {create(:user, email: "")}
 
-  describe "with a github user with name filled in" do
+  describe "with a github user with email filled in" do
     background do
       OmniAuth.config.test_mode = true
       OmniAuth.config.mock_auth[:github] = {
         'uid'  => user.uid,
         'provider' => user.provider,
         'info' => {
-          'name' => user.name,
+          'nickname' => user.name,
           'email' => user.email
         }
       }
@@ -23,27 +23,27 @@ feature 'User registration' do
     end
   end
 
-  describe "with an unnamed github user" do
+  describe "with a github user with a blank public email" do
     background do
       OmniAuth.config.test_mode = true
       OmniAuth.config.mock_auth[:github] = {
-        'uid'  => unnamed_user.uid,
-        'provider' => unnamed_user.provider,
+        'uid'  => user_with_blank_email.uid,
+        'provider' => user_with_blank_email.provider,
         'info' => {
-          'name' => unnamed_user.name,
-          'email' => unnamed_user.email
+          'nickname' => user_with_blank_email.name,
+          'email' => user_with_blank_email.email
         }
       }
       visit signin_path
     end
-    scenario "user is invited to fill in his name" do
-      expect(page).to have_content "Please enter your name."
+    scenario "user is invited to fill in his email address" do
+      expect(page).to have_content "Please enter your email address."
     end
     scenario "user completes registration and is redirected to requirements#index" do
-      fill_in "user_name", with: "Lename"
+      fill_in "user_email", with: "bob@example.com"
       click_button "Update"
       expect(page).to have_content "Your profile has been successfully updated!"
-      expect(page).to have_content "Lename"
+      expect(page).to have_content user_with_blank_email.name
       expect(page.current_path).to eq(requirements_path)
     end
   end
