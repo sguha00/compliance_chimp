@@ -1,80 +1,99 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-6">
-      <h1>
-        Compliance chimp
-        <br>
-        <small>
-          A workflow tool to manage PCI Compliance easily
-        </small>
+    <div class="col-md-10 col-md-offset-1">
+      <h1 class="text-center">
+        PCI Compliance. Simplified.
       </h1>
-    </div>
-    <div class="col-md-6">
-      <%= image_tag "report.png" %>
-    </div>
-  </div>
-
-  <br>
-  <br>
-  <br>
-
-  <div class="row">
-    <div class="col-md-9 col-md-offset-2">
-      <p class="lead">
-        Ready to wrangle PCI? Great! Attach a screenshot and be reminded to update requirements! Then share completed requirements with a security assessor. That's the entire process to obtaining PCI Security compliance!</a>
+      <p class="lead text-center">
+        A workflow tool offering an easy-to-follow process to track PCI security gaps and speed up the process of achieving PCI Compliance.
       </p>
-      <hr>
     </div>
   </div>
-
-  <br>
-
   <div class="row">
-    <div class="col-md-8 col-md-offset-2">
-      <h3 class="text-center text-muted">
-        Try out the app by logging in above or
-      </h3>
-      <%= mail_to 'akshat.ip@gmail.com',
-            'Send an email with your critical feedback!',
-            subject: 'I have a PCI Complaint!',
-            class: "btn btn-primary btn-lg btn-block" %>
+    <div class="col-md-6 col-md-offset-3">
+      <%= image_tag "report.png" %>
     </div>
   </div>
 
   <hr>
 
   <div class="row">
-    <div class="col-md-4">
-      <h2>what makes our app stand out</h2>
+    <div class="col-md-12">
+      <h3 class="text-center">
+        What does it do?
+      </h3>
     </div>
-    <div class="col-md-8">
-      <div class="media">
-        <div class="pull-left">
-          <img src="http://placehold.it/128x128", class: "img-polaroid">
-        </div>
-        <div class="media-body">
-          <h4 class="media-heading">Tracker</h4>
-          Track and update your compliance progress directly from your phone. No need to come up with checklist mumbo jumbo or deal with expensive compliance services! All requirements are already prepared for you.
-        </div>
-      </div>
-      <div class="media">
-        <div class="pull-left">
-          <img src="http://placehold.it/128x128", class: "img-polaroid">
-        </div>
-        <div class="media-body">
-          <h4 class="media-heading">Reminders</h4>
-          We know that staying updated with compliance is important to you. If a deadline has passed, our system will detect and notify you with scheduled reminders (e.g. quarterly vulnerability scan).
-        </div>
-      </div>
-      <div class="media">
-        <div class="pull-left">
-          <img src="http://placehold.it/128x128", class: "img-polaroid">
-        </div>
-        <div class="media-body">
-          <h4 class="media-heading">Sharing</h4>
-          Securely share your progress with a QSA. Generate a self-assessment report for you or your QSA, and after an audit, they’ll create a Report of Compliance for your company. Just mark as complete when you’re ready.
+  </div>
+
+  <div class="row">
+    <div class="col-md-4">
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <div class="text-center">
+            <i class="fa fa-check fa-5x" style="color: #47a447;"></i>
+          </div>
+          <h4 class="text-center">
+            Compliance Checklist
+          </h4>
+          <p>
+            Our tool provides a straightforward checklist of PCI requirements you need to complete to become PCI compliant.
+          </p>
+          <p>
+            Simply start addressing each requirement individually and track your progress directly from your smartphone.
+          </p>
+          <br>
         </div>
       </div>
+    </div>
+    <div class="col-md-4">
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <div class="text-center">
+            <i class="fa fa-clock-o fa-5x" style="color: #d2322d;"></i>
+          </div>
+          <h4 class="text-center">
+            Periodic Reminders
+          </h4>
+          <p>
+            PCI mandates periodic assessments of your environment. We take care of the hassle of having to remember when and what security requirements to update.
+          </p>
+          <p>
+            Our system will automatically detect and notify you by email and SMS 15 days before a requirement deadline.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <div class="text-center">
+            <i class="fa fa-exchange fa-5x" style="color: #3276b1;"></i>
+          </div>
+          <h4 class="text-center">
+            Secure Sharing
+          </h4>
+          <p>
+            Securely share your current progress and streamline the communication with your <abbr title="Qualified Security Assessor">QSA</abbr>.
+          </p>
+          <p>
+            Generate a self-assessment report for you or your auditor, and once the audit is complete, get your final <abbr title="Report on Compliance">RoC</abbr> for your company.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      <h3 class="text-center">
+        What are you waiting for?
+      </h3>
+      <p class="text-center">
+        Become PCI Compliance for only $95/month. Free 14-day trial, no credit card required.
+      </p>
+      <%= link_to 'Get started for free!', signin_path, class: "btn btn-embossed btn-block btn-hg btn-primary" %>
     </div>
   </div>
 </div>

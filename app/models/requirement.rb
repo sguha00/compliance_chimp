@@ -9,6 +9,7 @@ class Requirement
       chart.options[:chart][:defaultSeriesType] = "pie"
       chart.options[:chart][:height] = 210
       chart.options[:title][:text] = "PCI Requirements"
+      chart.options[:chart][:backgroundColor] = '#ecf0f1'
       chart.plot_options(pie: {
         dataLabels: {format: "<strong>{point.name}</strong>: {point.percentage:.lf} %"}
       })
