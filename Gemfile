@@ -24,6 +24,7 @@ gem 'httparty'
 gem 'lazy_high_charts'
 gem 'prawn'
 gem 'google-analytics-rails'
+gem 'font-awesome-rails'
 
 group :development do
   gem 'better_errors'
