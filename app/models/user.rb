@@ -24,6 +24,10 @@ class User
     end
   end
 
+  def admin?
+    has_role? :admin
+  end
+
   def proofs_count
     proofs.count
   end

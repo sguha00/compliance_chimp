@@ -6,5 +6,8 @@ FactoryGirl.define do
     uid '100004721472441'
     name 'Bob Raymond'
     email 'bob@example.com'
+    factory :admin do
+      after(:create) {|user| user.add_role :admin}
+    end
   end
 end

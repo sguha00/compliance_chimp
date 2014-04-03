@@ -1,4 +1,5 @@
 class ProofsController < ApplicationController
+  load_and_authorize_resource
 
   # GET /requirements/1/proofs/new
   def new
