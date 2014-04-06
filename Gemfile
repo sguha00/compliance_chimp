@@ -25,6 +25,7 @@ gem 'lazy_high_charts'
 gem 'prawn'
 gem 'google-analytics-rails'
 gem 'font-awesome-rails'
+gem "active_model_serializers", "~> 0.8.0"
 
 group :development do
   gem 'better_errors'

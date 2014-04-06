@@ -2,5 +2,7 @@
 
 FactoryGirl.define do
   factory :requirement do
+    sequence(:name) {|i| "1.1.#{i}"}
+    description "Lorem ipsum"
   end
 end

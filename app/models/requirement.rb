@@ -24,6 +24,16 @@ class Requirement
     RequirementSeries.new(user).render
   end
 
+  def description_extended
+    description
+  end
+
+  %w(description_short has_children proof_type testing_procedure guidance).each do |method|
+    define_method method do
+      "dummy"
+    end
+  end
+
   def proof_for(user)
     proofs.where(user: user).first
   end

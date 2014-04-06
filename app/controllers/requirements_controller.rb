@@ -12,7 +12,6 @@ class RequirementsController < ApplicationController
                               type: "application/pdf",
                               disposition: "inline"
       end
-      format.json { render json: @requirements }
     end
   end
 end

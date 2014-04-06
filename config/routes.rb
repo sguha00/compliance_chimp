@@ -1,4 +1,10 @@
 ComplianceChimp::Application.routes.draw do
+  namespace :api, defaults: {format: 'json'} do
+    scope module: :v1, constraints: ApiConstraints.new(version: 1, default: :true) do
+      match "v1/requirements", to: "requirements#index", via: [:options, :get]
+    end
+  end
+
   root :to => "home#index"
   get "images/destroy", to: "images#destroy", as: "destroy_image"
   resources :requirements, only: :index do
