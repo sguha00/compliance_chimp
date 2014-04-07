@@ -11,8 +11,8 @@ class RequirementsController < ApplicationController
       format.pdf do
         pdf = RequirementsPdf.new(@requirements, view_context)
         send_data pdf.render, filename: "requirements_#{Date.today}.pdf",
-                              type: "application/pdf",
-                              disposition: "inline"
+                              type: 'application/pdf',
+                              disposition: 'inline'
       end
       format.json { render json: @requirements }
     end

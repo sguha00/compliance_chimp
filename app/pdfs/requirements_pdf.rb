@@ -1,6 +1,6 @@
-require "open-uri"
+require 'open-uri'
 class RequirementsPdf < Prawn::Document
-  def initialize requirements, view
+  def initialize(requirements, view)
     super top_margin: 20, page_layout: :landscape
     @requirements = requirements
     @view = view
@@ -19,14 +19,14 @@ class RequirementsPdf < Prawn::Document
 
   def requirements_table
     data = [].tap do |data|
-      data << ["#", "Description", "Note", {content: "Proof", colspan: 2}, "Updated"]
+      data << ['#', 'Description', 'Note', { content: 'Proof', colspan: 2 }, 'Updated']
     end
     @requirements.each do |req|
       data << [req.name, req.description, proof_of(req).try(:note), image_for_proof(req), link_for_image_of_proof_of(req), timestamp_for_proof_of(req)]
     end
 
     font_size 10 do
-      table data, header: true, column_widths: {0 => 40, 1 => 150, 2 => 150, 3 => 250}, cell_style: { inline_format: true }
+      table data, header: true, column_widths: { 0 => 40, 1 => 150, 2 => 150, 3 => 250 }, cell_style: { inline_format: true }
     end
   end
 

@@ -6,9 +6,9 @@ class Requirement
 
   def self.assessment_chart_for(user)
     LazyHighCharts::HighChart.new('pie') do |chart|
-      chart.options[:chart][:defaultSeriesType] = "pie"
+      chart.options[:chart][:defaultSeriesType] = 'pie'
       chart.options[:chart][:height] = 210
-      chart.options[:title][:text] = "PCI Requirements"
+      chart.options[:title][:text] = 'PCI Requirements'
       chart.options[:chart][:backgroundColor] = '#ecf0f1'
       chart.plot_options(pie: {
         dataLabels: {format: "<strong>{point.name}</strong>: {point.percentage:.lf} %"}
@@ -37,7 +37,7 @@ class RequirementSeries
   end
 
   def render
-    [["Complete", percentage(completes_count)], ["Incomplete", percentage(total - completes_count)]]
+    [['Complete', percentage(completes_count)], ['Incomplete', percentage(total - completes_count)]]
   end
 
   private

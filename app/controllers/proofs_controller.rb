@@ -22,7 +22,7 @@ class ProofsController < ApplicationController
       if @proof.save
         format.html { redirect_to requirements_url, notice: 'Proof was successfully attached.' }
       else
-        format.html { render action: "new" }
+        format.html { render action: 'new' }
       end
     end
   end
@@ -35,7 +35,7 @@ class ProofsController < ApplicationController
     respond_to do |format|
       if @proof.update_attributes(params[:proof])
         format.html do
-          redirect_url = @proof.filepicker_url != old_filepicker_url ? destroy_image_url(image_url: old_filepicker_url, message: "Proof was updated and old image was destroyed.") : requirements_url
+          redirect_url = @proof.filepicker_url != old_filepicker_url ? destroy_image_url(image_url: old_filepicker_url, message: 'Proof was updated and old image was destroyed.') : requirements_url
           redirect_to redirect_url, notice: 'Proof was successfully updated.'
         end
       else

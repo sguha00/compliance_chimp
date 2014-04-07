@@ -9,14 +9,14 @@
 # See http://railsapps.github.io/rails-environment-variables.html
 puts 'ROLES'
 YAML.load(ENV['ROLES']).each do |role|
-  Role.mongo_session['roles'].insert({ :name => role })
+  Role.mongo_session['roles'].insert(name: role)
   puts 'role: ' << role
 end
 
-require "csv"
-puts "importing Requirements table from csv"
-CSV.foreach("db/csv/PCI_requirements.csv", headers: true) do |row|
+require 'csv'
+puts 'importing Requirements table from csv'
+CSV.foreach('db/csv/PCI_requirements.csv', headers: true) do |row|
   puts "processing requirement #{row["name"]}"
-  record = Requirement.new(name: row["name"], description: row["description"].gsub(/\\n/, "\n"))
+  record = Requirement.new(name: row['name'], description: row['description'].gsub(/\\n/, "\n"))
   record.save!
 end
