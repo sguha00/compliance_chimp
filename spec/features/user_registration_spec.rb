@@ -21,6 +21,11 @@ feature 'User registration' do
     scenario 'user is automatically registered and signed in' do
       expect(page).to have_content "Signed in!"
     end
+
+    scenario 'user is expected to be able to update his profile at any time' do
+      click_on "Update your profile"#getting link in main navbar by title here
+      expect(page.current_path).to eq edit_user_path(user)
+    end
   end
 
   describe "with a github user with a blank public email" do

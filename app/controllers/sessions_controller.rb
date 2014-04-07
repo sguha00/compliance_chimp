@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+  skip_authorization_check
 
   def new
     redirect_to '/auth/github'

@@ -1,5 +1,7 @@
 class RequirementsController < ApplicationController
+  load_and_authorize_resource
   # GET /requirements
+  # GET /requirements.pdf
   # GET /requirements.json
   def index
     @requirements = Requirement.all

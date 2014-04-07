@@ -1,7 +1,7 @@
 <%# add navigation links to this file %>
 <% if user_signed_in? %>
   <li data-role="current-user">
-    <%= link_to "How's it going, #{current_user.name}", requirements_path %>
+    <%= link_to "How's it going, #{current_user.name}", edit_user_path(current_user), title: "Update your profile" %>
   </li>
   <li>
     <%= link_to "PCI Assessment", requirements_path %>
