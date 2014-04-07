@@ -17,6 +17,9 @@ require 'csv'
 puts 'importing Requirements table from csv'
 CSV.foreach('db/csv/PCI_requirements.csv', headers: true) do |row|
   puts "processing requirement #{row["name"]}"
-  record = Requirement.new(name: row['name'], description: row['description'].gsub(/\\n/, "\n"))
+  record = Requirement.new( name: row['name'],
+                            testing_procedure: row['testing_procedure'],
+                            guidance: row['guidance'],
+                            description: row['description'])
   record.save!
 end

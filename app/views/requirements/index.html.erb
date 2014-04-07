@@ -17,8 +17,9 @@
           <thead>
             <tr>
               <th class="col-md-1">#</th>
-              <th class="col-md-3">Description</th>
-              <th class="col-md-4">Note</th>
+              <th class="col-md-3">Objective</th>
+              <th class="col-md-4">Description</th>
+              <th class="col-md-4">Guidance</th
               <th class="col-md-4">Proof</th>
             </tr>
           </thead>
@@ -29,7 +30,13 @@
                 <%= requirement.name %>
               </td>
               <td>
+                <%= markdown(requirement.testing_procedure) %>
+              </td>
+              <td>
                 <%= markdown(requirement.description) %>
+              </td>
+              <td>
+                <%= markdown(requirement.guidance) %>
               </td>
               <td>
               <% if proof = requirement.proof_for(current_user) %>

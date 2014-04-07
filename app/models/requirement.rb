@@ -1,7 +1,9 @@
 class Requirement
   include Mongoid::Document
   field :name, type: String
+  field :testing_procedure, type: String
   field :description, type: String
+  field :guidance, type: String
   has_many :proofs
 
   def self.assessment_chart_for(user)
