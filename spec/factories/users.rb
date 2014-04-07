@@ -7,7 +7,7 @@ FactoryGirl.define do
     name 'Bob Raymond'
     email 'bob@example.com'
     factory :admin do
-      after(:create) {|user| user.add_role :admin}
+      after(:create) { |user| user.add_role :admin }
     end
   end
 end

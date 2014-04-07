@@ -14,6 +14,6 @@ class Proof
   private
 
   def attached_image
-    errors.add(:base, "You must attach an image to validate this proof") unless filepicker_url.present?
+    errors.add(:base, 'You must attach an image to validate this proof') unless filepicker_url.present?
   end
 end

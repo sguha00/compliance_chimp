@@ -12,7 +12,7 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update_attributes(params[:user])
-      redirect_to requirements_path, notice: "Your profile has been successfully updated!"
+      redirect_to requirements_path, notice: 'Your profile has been successfully updated!'
     else
       render :edit
     end
@@ -22,5 +22,4 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @requirements = Requirement.all
   end
-
 end
