@@ -40,14 +40,15 @@
          -o-animation-name: pulse;
             animation-name: pulse;
   }
+  
+  .panel .fa {
+    position: absolute;
+    left: 0;
+    right: 0;
+  }
+
+  .panel h4 {
+    margin-top: 100px;
+  }
 }
 
-.panel .fa {
-  position: absolute;
-  left: 0;
-  right: 0;
-}
-
-.panel h4 {
-  margin-top: 100px;
-}
