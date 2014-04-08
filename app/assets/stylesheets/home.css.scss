@@ -1,3 +1,50 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@-webkit-keyframes pulse{
+  0%, 100% {
+    -webkit-transform: scale(0.77);
+  }
+
+  50% {
+    -webkit-transform: scale(1);
+  }
+}
+
+@keyframes pulse{
+  0%, 100% {
+    transform: scale(0.77);
+  }
+
+  50% {
+    transform: scale(1);
+  }
+}
+
+@media (min-width: 768px){
+  .panel:hover i.fa{
+    
+    -webkit-animation-duration: 1s;
+       -moz-animation-duration: 1s;
+        -ms-animation-duration: 1s;
+         -o-animation-duration: 1s;
+            animation-duration: 1s;
+
+    -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+
+    -webkit-animation-name: pulse;
+       -moz-animation-name: pulse;
+        -ms-animation-name: pulse;
+         -o-animation-name: pulse;
+            animation-name: pulse;
+  }
+  
+  .panel i.fa {
+    font-size: 6.5em;
+    -webkit-transform: scale(0.77);
+    transform: scale(0.77);
+  }
+  
+}
