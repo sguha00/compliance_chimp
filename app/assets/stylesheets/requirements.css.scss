@@ -1,0 +1,213 @@
+/* Timeline */
+.timeline {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+.timeline > li {
+  position: relative;
+}
+
+/* Bar */
+.timeline:before {
+  background: hsl(210, 18%, 96%);
+  bottom: 0;
+  content: '';
+  left: 15%;
+  margin-left: -10px;
+  position: absolute;
+  top: 0;
+  width: 10px;
+}
+
+/* Aside */
+.timeline > li aside {
+  display: block;
+  padding-right: 110px;
+  position: absolute;
+  width: 20%;
+  top: 24px;
+}
+
+.timeline > li aside span {
+  display: block;
+  font-size: 38px;
+  text-align: right;
+}
+
+/* Content */
+.timeline > li .timeline-content {
+  margin: 0 0 20px 20%;
+  background: #fff;
+  padding: 35px;
+  position: relative;
+  border-radius: 5px;
+}
+
+  .timeline > li .timeline-content > h3.objective {
+    margin: 0 0 20px;
+  }
+
+  .timeline > li .timeline-content > h3.objective .timeline-due {
+    display: none;
+    float: right;
+    font-style: italic;
+  }
+
+    .timeline > li.upcoming .timeline-content > h3.objective .timeline-due {
+      display: inline;
+    }
+
+  .timeline > li .timeline-content > blockquote.objective {
+    margin: 0;
+  }
+
+  .timeline > li .timeline-content > .proof {
+    display: none;
+    margin-top: 20px;
+  }
+
+    .timeline > li.unresolved .timeline-content > .proof {
+      display: block;
+    }
+
+  .timeline > li .timeline-content > .proof form {
+    display: none;
+    margin: 0;
+    padding: 25px;
+    padding-bottom: 0;
+  }
+
+    .timeline > li .timeline-content > .proof form .dropfile {
+      background-color: hsl(210, 15%, 97%);
+      border-radius: 15px;
+      border: 3px dashed hsl(210, 15%, 89%);
+      cursor: pointer;
+      min-height: 20px;
+      text-align: center;
+    }
+
+      .timeline > li .timeline-content > .proof form .dropfile small {
+        display: block;
+        margin: 50px 0;
+      }
+
+    .timeline > li .timeline-content > .proof form textarea {
+      min-height: 126px;
+    }
+
+/* Arrow */
+.timeline > li .timeline-content:after {
+  right: 100%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-right-color: #fff;
+  border-width: 14px;
+  top: 40px;
+}
+
+/* Icons */
+.timeline > li .timeline-icon {
+  -webkit-font-smoothing: antialiased;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 1.5em;
+  height: 40px;
+  left: 15%;
+  line-height: 38px;
+  margin: 0 0 0 -25px;
+  position: absolute;
+  text-align: center;
+  top: 30px;
+  width: 40px;
+}
+
+  .timeline > li.info .timeline-icon {
+    background-color: hsl(202, 67%, 60%);
+    box-shadow: 0 0 0 6px hsl(202, 67%, 80%);
+  }
+
+    .timeline > li.info .timeline-icon i:before {
+      content: "\f129";
+    }
+
+  .timeline > li.upcoming .timeline-icon {
+    background-color: hsl(35, 84%, 60%);
+    box-shadow: 0 0 0 6px hsl(35, 84%, 80%);
+  }
+
+    .timeline > li.upcoming .timeline-icon i:before {
+      content: "\f073";
+    }
+
+  .timeline > li.resolved .timeline-icon {
+    background-color: hsl(120, 39%, 50%);
+    box-shadow: 0 0 0 6px hsl(120, 39%, 70%);
+  }
+
+    .timeline > li.resolved .timeline-icon i:before {
+      content: "\f00c";
+    }
+
+  .timeline > li.unresolved .timeline-icon {
+    background-color: hsl(2, 64%, 60%);
+    box-shadow: 0 0 0 6px hsl(2, 64%, 80%);
+  }
+
+    .timeline > li.unresolved .timeline-icon i:before {
+      content: "\f00d";
+    }
+
+.timeline > li:hover .timeline-icon {
+  -webkit-animation-duration: 1s; animation-duration: 1s;
+  -webkit-animation-fill-mode: both; animation-fill-mode: both;
+  -webkit-animation-name: pulse; animation-name: pulse;
+}
+
+@media screen and (max-width: 991px) {
+  /* Bar */
+  .timeline:before {
+    display: none;
+  }
+
+  /* Aside */
+  .timeline > li aside {
+    padding: 0 0 6px 0;
+    position: relative;
+    text-align: left;
+    width: 100%;
+  }
+
+    .timeline > li aside span {
+      display: inline-block;
+    }
+
+  /* Content */
+  .timeline > li .timeline-content {
+    margin: 30px 0;
+    padding: 15px;
+  }
+
+  /* Arrow */
+  .timeline > li .timeline-content:after {
+    border-bottom-color: #fff;
+    border-right-color: transparent;
+    left: 20px;
+    right: auto;
+    top: -20px;
+  }
+
+  /* Icons */
+  .timeline > li .timeline-icon {
+    float: right;
+    left: auto;
+    margin: -60px 10px 0 0px;
+    position: relative;
+  }
+}

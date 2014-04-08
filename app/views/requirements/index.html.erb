@@ -6,59 +6,65 @@
   </div>
   <div class="row">
     <div class="col-md-12">
-      <h3>Getting started: </h3>
-      <p>Attach a screenshot showing how you meet the PCI requirements (e.g. network diagram), then receive reminders to update requirements!</p>
-      <div class="panel panel-info">
-        <div class="panel-heading">
-          Requirements
-          <%= link_to "Share with QSA", {format: :pdf}, class: "btn btn-default pull-right" %>
-        </div>
-        <table class="table">
-          <thead>
-            <tr>
-              <th class="col-md-1">#</th>
-              <th class="col-md-3">Description</th>
-              <th class="col-md-4">Note</th>
-              <th class="col-md-4">Proof</th>
-            </tr>
-          </thead>
-          <% @requirements.each do |requirement| %>
-          <tbody>
-            <tr>
-              <td data-role="requirement">
-                <%= requirement.name %>
-              </td>
-              <td>
-                <%= markdown(requirement.description) %>
-              </td>
-              <td>
+      <p class="text-center"><%= link_to "Share with QSA", {format: :pdf}, class: "btn btn-default" %></p>
+    </div>
+  </div>
+</div>
+<section id="requirements" class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <ul class="timeline">
+        <% @requirements.each do |requirement| %>
+        <li class="unresolved">
+          <aside>
+            <span data-role="requirement">
+              <%= requirement.name %>
+          </span>
+          </aside>
+          <div class="timeline-icon">
+            <i class="fa"></i>
+          </div>
+          <div class="timeline-content">
+            <h3 class="objective">
+              Objective
+              <small class="timeline-due">in 15 days</small>
+            </h3>
+            <blockquote class="objective">
+              <p class="lead"><%= markdown requirement.description %></p>
+            </blockquote>
+            <div class="proof" data-role="<%= requirement.name %>-proof">
               <% if proof = requirement.proof_for(current_user) %>
                 <%= proof.note %>
               <% end %>
-              </td>
-              <td data-role="<%= requirement.name %>-proof">
-                <% if proof = requirement.proof_for(current_user) %>
-                  <div>
-                    <%= link_to "Update proof",
-                        edit_proof_path(proof),
-                        title: "Update proof for #{requirement.name}" %>
-                    <p><%= img_of_proof_for(requirement) %></p>
-                    <small>Updated <%= time_ago_in_words(proof.updated_at) %> ago</small>
-                  </div>
-                <% else %>
-                  <div>
-                    <%= link_to "Attach proof",
-                        new_requirement_proof_path(requirement),
-                        class: "btn btn-success btn-xs",
-                        title: "Attach proof for #{requirement.name}" %>
-                  </div>
-                <% end %>
-              </td>
-            </tr>
-          </tbody>
-          <% end %>
-        </table>
-      </div>
-    </div>
+              <% if proof %>
+                <div>
+                  <%= link_to "Update proof",
+                      edit_proof_path(proof),
+                      class: "btn btn-primary pull-right",
+                      title: "Update proof for #{requirement.name}" %>
+                  <p><%= img_of_proof_for(requirement) %></p>
+                  <small>Updated <%= time_ago_in_words(proof.updated_at) %> ago</small>
+                </div>
+              <% else %>
+                <div>
+                  <%= link_to "Attach proof",
+                      new_requirement_proof_path(requirement),
+                      class: "btn btn-primary",
+                      title: "Attach proof for #{requirement.name}" %>
+                </div>
+              <% end -%>
+            </div><!-- .proof -->
+          </div>
+        </li>
+        <% end %>
+      </ul>
+    </div><!-- .col-md-12 -->
+  </div><!-- .row -->
+</section>
+
+<div class="row">
+  <div class="col-md-12">
+    <h3>Getting started: </h3>
+    <p>Attach a screenshot showing how you meet the PCI requirements (e.g. network diagram), then receive reminders to update requirements!</p>
   </div>
 </div>
