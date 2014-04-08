@@ -25,6 +25,7 @@ gem 'lazy_high_charts'
 gem 'prawn'
 gem 'google-analytics-rails'
 gem 'font-awesome-rails'
+gem 'high_voltage', '~> 2.1.0'
 
 group :development do
   gem 'better_errors'
