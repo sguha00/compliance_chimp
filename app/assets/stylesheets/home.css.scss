@@ -4,21 +4,21 @@
 
 @-webkit-keyframes pulse{
   0%, 100% {
-    -webkit-transform: scale(1);
+    -webkit-transform: scale(0.77);
   }
 
   50% {
-    -webkit-transform: scale(1.3);
+    -webkit-transform: scale(1);
   }
 }
 
 @keyframes pulse{
   0%, 100% {
-    transform: scale(1);
+    transform: scale(0.77);
   }
 
   50% {
-    transform: scale(1.3);
+    transform: scale(1);
   }
 }
 
@@ -40,4 +40,11 @@
          -o-animation-name: pulse;
             animation-name: pulse;
   }
+  
+  .panel i.fa {
+    font-size: 6.5em;
+    -webkit-transform: scale(0.77);
+    transform: scale(0.77);
+  }
+  
 }
