@@ -4,18 +4,24 @@
     <%= link_to "How's it going, #{current_user.name}", edit_user_path(current_user), title: "Update your profile" %>
   </li>
   <li>
-    <%= link_to "PCI Assessment", requirements_path %>
+    <%= link_to "Checklist", requirements_path %>
   </li>
   <li>
-    <%= link_to "Forum", "http://discuss.compliancechimp.com" %>
+    <%= link_to "Forum", "#" %>
   </li>
 <% end %>
 <% if user_signed_in? %>
   <li><%= link_to 'Logout', signout_path %></li>
 <% else %>
-  <li><a href="#">FAQ</a></li>
-  <li><a href="#">Forum</a></li>
-  <li><a href="#">Find a QSA</a></li>
+  <li>
+    <%= link_to 'FAQ', page_path('faq') %>
+  </li>
+  <li>
+    <a href="#">Forum</a>
+  </li>
+  <li>
+    <%= link_to 'Find a QSA', page_path('find-a-qsa') %>
+  </li>
   <li>
     <%= button_to 'login/register',
         signin_path,

@@ -22,7 +22,8 @@ production:
   SECRET_KEY_BASE: # generate this with `rake secret`
   MANDRILL_USERNAME: Your_Username
   MANDRILL_APIKEY: Your_API_Key
-
+test:
+  SECRET_KEY_BASE: # generate this with `rake secret`
 ADMIN_NAME: First User
 ADMIN_EMAIL: user@example.com
 ADMIN_PASSWORD: changeme

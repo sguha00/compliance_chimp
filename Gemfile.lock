@@ -140,6 +140,7 @@ GEM
     hash-deep-merge (0.1.1)
     hashery (2.1.1)
     hashie (2.0.5)
+    high_voltage (2.1.0)
     hike (1.2.3)
     hirb (0.7.1)
     httparty (0.13.0)
@@ -366,6 +367,7 @@ DEPENDENCIES
   guard-bundler
   guard-rails
   guard-rspec
+  high_voltage (~> 2.1.0)
   httparty
   hub
   jazz_hands
