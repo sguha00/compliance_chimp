@@ -13,13 +13,21 @@ YAML.load(ENV['ROLES']).each do |role|
   puts 'role: ' << role
 end
 
+def fix_new_lines(string)
+  string.gsub(/\\n/, "\n") unless string.blank?
+end
+
+def remove_name(string)
+  string.gsub(/^\d+(\.\d+|\.[a-z]+)+\s/, "")
+end
+
 require 'csv'
 puts 'importing Requirements table from csv'
 CSV.foreach('db/csv/PCI_requirements.csv', headers: true) do |row|
   puts "processing requirement #{row["name"]}"
-  record = Requirement.new( name: row['name'],
-                            testing_procedure: row['testing_procedure'],
-                            guidance: row['guidance'],
-                            description: row['description'])
+  record = Requirement.new(name: row['name'],
+                           description: fix_new_lines(remove_name(row['description'])),
+                           testing_procedure: fix_new_lines(remove_name(row['testing_procedure'])),
+                           guidance: fix_new_lines(row['guidance']))
   record.save!
 end
