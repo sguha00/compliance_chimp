@@ -1,16 +1,68 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-4">
-      <br>
-      <br>
-      <%= render 'current_proof_image', requirement: @proof.requirement, proof: @proof, placeholder: true %>
-    </div>
-    <div class="col-md-6">
-      <h3>Update screenshot for Requirement <%= @proof.requirement_name %></h3>
+    <%= simple_form_for(@proof, role: "form") do |form| %>
+    <%= form.error_notification %>
+    <div class="col-md-12">
+      <h3><%= @proof.requirement.name %> </h3>
+      <p><%= @proof.requirement.description %></p>
       <p>
         Updated <%= time_ago_in_words(@proof.updated_at) %> ago
       </p>
-      <%= render "form", proof: @proof %>
     </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-8 col-md-offset-1">
+      <%= form.input :note,
+          as: :text,
+          label: "Note (for your QSA)",
+          placeholder: "Share some details about how you meet this requirement with your QSA",
+          input_html: { rows: 6, class: "col-md-8" } %>
+
+    </div>
+    <div class="col-md-2">
+      <h4>
+        Add
+      </h4>
+      <div>
+        <%= form.filepicker_field :filepicker_url,
+            services: "COMPUTER",
+            button_class: "btn btn-default",
+            button_text: "Screenshot" %>
+      </div>
+    </div>
+
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-md-6">
+      <h4>Screenshot of Evidence</h4>
+      <% if form.object.errors.any? %>
+        <div class="panel panel-danger" id="error_explanation">
+          <div class="panel-heading">
+            <%= pluralize(form.object.errors.count, "error") %> prohibited
+            this post from being saved:
+          </div>
+          <div class="panel-body">
+            <ol>
+              <% form.object.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+              <% end %>
+            </ol>
+          </div>
+        </div>
+      <% end %>
+      <%= render 'current_proof_image',
+          requirement: @proof.requirement,
+          proof: @proof,
+          placeholder: true %>
+    </div>
+    <br>
+    <br>
+    <div class="col-md-6">
+      <%= form.button :submit, "Submit Proof!",
+          class: "btn btn-embossed btn-block btn-hg btn-primary" %>
+    </div>
+    <% end %>
   </div>
 </div>
