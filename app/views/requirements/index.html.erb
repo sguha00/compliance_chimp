@@ -42,7 +42,7 @@
                       edit_proof_path(proof),
                       class: "btn btn-primary pull-right",
                       title: "Update proof for #{requirement.name}" %>
-                  <p><%= img_of_proof_for(requirement) %></p>
+                  <p><%= screenshot_for(requirement) %></p>
                   <small>Updated <%= time_ago_in_words(proof.updated_at) %> ago</small>
                 </div>
               <% else %>
