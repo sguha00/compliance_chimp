@@ -26,6 +26,7 @@ gem 'prawn'
 gem 'google-analytics-rails'
 gem 'font-awesome-rails'
 gem 'high_voltage', '~> 2.1.0'
+gem 'rails_12factor'
 
 group :development do
   gem 'better_errors'
