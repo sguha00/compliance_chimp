@@ -4,21 +4,21 @@
 
 @-webkit-keyframes pulse{
   0%, 100% {
-    -webkit-transform: scale(0.77);
+    -webkit-transform: scale3d(0.77, 0.77, 1);
   }
 
   50% {
-    -webkit-transform: scale(1);
+    -webkit-transform: scale3d(1, 1, 1);
   }
 }
 
 @keyframes pulse{
   0%, 100% {
-    transform: scale(0.77);
+    transform: scale3d(0.77, 0.77, 1);
   }
 
   50% {
-    transform: scale(1);
+    transform: scale3d(1, 1, 1);
   }
 }
 
@@ -43,11 +43,11 @@
   
   .panel i.fa {
     font-size: 6.5em;
-    -webkit-transform: scale(0.77);
+    -webkit-transform: scale3d(0.77, 0.77, 1);
     transform: scale(0.77);
   }
   
-  .panel {
+  body {
     -webkit-transform: translateZ(0);
   }
 
