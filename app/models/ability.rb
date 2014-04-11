@@ -9,6 +9,7 @@ class Ability
       can :update, user
       can :create, Proof
       can :update, Proof, user: user
+      can :destroy, :images
     end
     if user.has_role? :admin
       can :manage, :all

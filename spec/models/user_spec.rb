@@ -21,6 +21,7 @@ describe User do
       it { should be_able_to(:create, Proof) }
       it { should be_able_to(:update, build_stubbed(:proof, user: user)) }
       it { should_not be_able_to(:update, build_stubbed(:proof, user: build_stubbed(:user))) }
+      it { should be_able_to(:destroy, :images) }
     end
 
     context 'for admin users' do
