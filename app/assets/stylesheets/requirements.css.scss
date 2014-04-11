@@ -124,7 +124,7 @@
   margin: 0 0 0 -25px;
   position: absolute;
   text-align: center;
-  top: 30px;
+  top: 35px;
   width: 40px;
 }
 
@@ -163,12 +163,6 @@
     .timeline > li.unresolved .timeline-icon i:before {
       content: "\f00d";
     }
-
-.timeline > li:hover .timeline-icon {
-  -webkit-animation-duration: 1s; animation-duration: 1s;
-  -webkit-animation-fill-mode: both; animation-fill-mode: both;
-  -webkit-animation-name: pulse; animation-name: pulse;
-}
 
 @media screen and (max-width: 991px) {
   /* Bar */

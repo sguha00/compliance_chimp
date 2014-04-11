@@ -4,26 +4,26 @@
 
 @-webkit-keyframes pulse{
   0%, 100% {
-    -webkit-transform: scale(0.77);
+    -webkit-transform: scale3d(0.77, 0.77, 1);
   }
 
   50% {
-    -webkit-transform: scale(1);
+    transform: scale3d(0.77, 0.77, 1);
   }
 }
 
 @keyframes pulse{
   0%, 100% {
-    transform: scale(0.77);
+    transform: scale3d(0.77, 0.77, 1);
   }
 
   50% {
-    transform: scale(1);
+    transform: scale3d(0.77, 0.77, 1);
   }
 }
 
 @media (min-width: 768px){
-  .panel:hover i.fa{
+  .pulse-container:hover .pulse{
     
     -webkit-animation-duration: 1s;
        -moz-animation-duration: 1s;
@@ -41,10 +41,10 @@
             animation-name: pulse;
   }
   
-  .panel i.fa {
+  .pulse {
     font-size: 6.5em;
-    -webkit-transform: scale(0.77);
-    transform: scale(0.77);
+    -webkit-transform: scale3d(0.77, 0.77, 1);
+    transform: scale3d(0.77, 0.77, 1);
   }
   
 }

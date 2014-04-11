@@ -15,13 +15,13 @@
     <div class="col-md-12">
       <ul class="timeline">
         <% @requirements.each do |requirement| %>
-        <li class="unresolved">
+        <li class="unresolved pulse-container">
           <aside>
             <span data-role="requirement">
               <%= requirement.name %>
           </span>
           </aside>
-          <div class="timeline-icon">
+          <div class="timeline-icon pulse">
             <i class="fa"></i>
           </div>
           <div class="timeline-content">
