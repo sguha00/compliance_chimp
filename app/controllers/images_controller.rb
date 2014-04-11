@@ -1,5 +1,6 @@
 class ImagesController < ApplicationController
   def destroy
+    authorize! :destroy, :images
     image_url = params[:image_url]
     complete_delete_url = image_url + "?key=#{ENV["FILEPICKER_API_KEY"]}"
     HTTParty.delete(complete_delete_url)
