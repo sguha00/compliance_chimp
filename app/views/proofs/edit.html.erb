@@ -3,8 +3,13 @@
     <%= simple_form_for(@proof, role: "form") do |form| %>
     <%= form.error_notification %>
     <div class="col-md-12">
-      <h3><%= @proof.requirement.name %> </h3>
-      <p><%= @proof.requirement.description %></p>
+      <h3><%= @proof.requirement.name %></h3>
+      <h3>Objective</h3>
+      <p><%= markdown(@proof.requirement.testing_procedure) %></p>
+      <h4>Description</h4>
+      <p><%= markdown(@proof.requirement.description) %></p>
+      <h5>Guidance</h5>
+      <p><%= markdown(@proof.requirement.guidance) %></p>
       <p>
         Updated <%= time_ago_in_words(@proof.updated_at) %> ago
       </p>

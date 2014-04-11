@@ -30,7 +30,7 @@
               <small class="timeline-due">in 15 days</small>
             </h3>
             <blockquote class="objective">
-              <p class="lead"><%= markdown requirement.description %></p>
+              <p class="lead"><%= markdown requirement.testing_procedure %></p>
             </blockquote>
             <div class="proof" data-role="<%= requirement.name %>-proof">
               <% if proof = requirement.proof_for(current_user) %>
