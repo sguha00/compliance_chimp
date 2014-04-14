@@ -50,4 +50,9 @@
     transform: scale3d(0.77, 0.77, 1);
   }
 
+  body {
+    -webkit-transform: translateZ(0);
+  }
+
 }
+
