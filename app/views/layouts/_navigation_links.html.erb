@@ -6,21 +6,12 @@
   <li>
     <%= link_to "Checklist", requirements_path %>
   </li>
-  <li>
-    <%= link_to "Forum", "#" %>
-  </li>
 <% end %>
 <% if user_signed_in? %>
   <li><%= link_to 'Logout', signout_path %></li>
 <% else %>
   <li>
-    <%= link_to 'FAQ', page_path('faq') %>
-  </li>
-  <li>
-    <a href="#">Forum</a>
-  </li>
-  <li>
-    <%= link_to 'Find a QSA', page_path('find-a-qsa') %>
+    <%= link_to 'About', page_path('about') %>
   </li>
   <li>
     <%= button_to 'login/register',

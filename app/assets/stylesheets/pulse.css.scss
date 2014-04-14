@@ -1,6 +1,8 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import 'gh-fork-ribbon.ie';
+@import 'gh-fork-ribbon';
 
 @-webkit-keyframes pulse{
   0%, 100% {
@@ -40,11 +42,12 @@
          -o-animation-name: pulse;
             animation-name: pulse;
   }
+
   
   .pulse {
     font-size: 6.5em;
     -webkit-transform: scale3d(0.77, 0.77, 1);
     transform: scale3d(0.77, 0.77, 1);
   }
-  
+
 }
