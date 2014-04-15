@@ -2,30 +2,63 @@
   <div class="row">
     <%= simple_form_for([@requirement, @proof], role: "form") do |form| %>
     <%= form.error_notification %>
-    <div class="col-md-12">
-      <h3><%= @requirement.name %></h3>
-      <h3>Objective</h3>
+    <div class="col-md-7">
+      <h3>Objective <%= @requirement.name %></h3>
       <p><%= markdown(@requirement.testing_procedure) %></p>
-      <h4>Description</h4>
-      <p><%= markdown(@requirement.description) %></p>
-      <h5>Guidance</h5>
-      <p><%= markdown(@requirement.guidance) %></p>
     </div>
-  </div>
+  </div><!--.row-->
 
   <div class="row">
-    <div class="col-md-8 col-md-offset-1">
-      <%= form.input :note,
-          as: :text,
-          label: "Note (for your QSA)",
-          placeholder: "Share some details about how you meet this requirement with your QSA",
-          input_html: { rows: 6, class: "col-md-8" } %>
+    <div class="col-md-7">
+      <div class="panel-group" id="accordion">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                Requirement
+              </a>
+            </h4>
+          </div>
+          <div id="collapseOne" class="panel-collapse collapse">
+            <div class="panel-body">
+              <p class="lead"><%= markdown @requirement.description %></p>
+            </div>
+          </div>
+        </div>
 
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+                Guidance
+              </a>
+            </h4>
+          </div>
+          <div id="collapseTwo" class="panel-collapse collapse">
+            <div class="panel-body">
+              <p class="lead"><%= markdown @requirement.guidance %></p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="col-md-2">
-      <h4>
+  </div><!--.row-->
+
+  <div class="row">
+    <div class="col-md-8">
+      <div class="form-group">
+        <h6>Note (for your QSA)</h6>
+        <%= form.input :note,
+            as: :text,
+            label: false,
+            placeholder: "Share some details about how you meet this requirement with your QSA",
+            input_html: { rows: 6, class: "col-md-8" } %>
+      </div>
+    </div>
+    <div class="col-md-1">
+      <h6>
         Add
-      </h4>
+      </h6>
       <div>
         <%= form.filepicker_field :filepicker_url,
             services: "COMPUTER",
@@ -33,12 +66,11 @@
             button_text: "Screenshot" %>
       </div>
     </div>
-
-  </div>
-  <br>
+  </div><!--.row-->
+<br>
   <div class="row">
-    <div class="col-md-6">
-      <h4>Screenshot of Evidence</h4>
+    <div class="col-md-8">
+      <h6>Screenshot of Evidence</h6>
       <% if form.object.errors.any? %>
         <div class="panel panel-danger" id="error_explanation">
           <div class="panel-heading">
@@ -58,12 +90,10 @@
           requirement: @requirement, proof: @proof,
           placeholder: true %>
     </div>
-    <br>
-    <br>
-    <div class="col-md-6">
-      <%= form.button :submit, "Submit Proof!",
+    <div class="col-md-4">
+      <%= form.button :submit, "Submit Evidence!",
           class: "btn btn-embossed btn-block btn-hg btn-primary" %>
     </div>
     <% end %>
-  </div>
-</div>
+  </div><!--.row-->
+</div><!--.container-->
