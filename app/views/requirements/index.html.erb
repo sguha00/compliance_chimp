@@ -16,16 +16,16 @@
       <ul class="timeline">
       <% @requirements.each do |requirement| %>
         <% if proof = requirement.proof_for(current_user) %>
-        <li class="resolved">
+        <li class="resolved pulse-container">
         <% else %>
-        <li class="unresolved">
+        <li class="unresolved pulse-container">
         <% end %>
           <aside>
             <span data-role="requirement">
               <%= requirement.name %>
             </span>
           </aside>
-          <div class="timeline-icon">
+          <div class="timeline-icon pulse">
             <i class="fa"></i>
           </div>
           <div class="timeline-content">
