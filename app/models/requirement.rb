@@ -29,6 +29,16 @@ class Requirement
   def proof_for(user)
     proofs.where(user: user).first
   end
+
+  def dashed_name
+    dots_to_dashes(name)
+  end
+
+  private
+
+  def dots_to_dashes(string)
+    string.gsub(/\./, "-")
+  end
 end
 
 class RequirementSeries
