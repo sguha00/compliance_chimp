@@ -8,7 +8,7 @@
     <div class="col-md-12">
       <p class="text-center"><%= link_to "Share with QSA", {format: :pdf}, class: "btn btn-default" %></p>
     </div>
-  </div><!--.row-->
+  </div><!-- .row-->
 </div>
 <section id="requirements" class="container">
   <div class="row">
@@ -55,7 +55,7 @@
                         <p class="lead"><%= markdown requirement.description %></p>
                       </div>
                     </div>
-                  </div>
+                  </div><!-- .panel-->
 
                   <div class="panel panel-default">
                     <div class="panel-heading">
@@ -70,7 +70,24 @@
                         <p class="lead"><%= markdown requirement.guidance %></p>
                       </div>
                     </div>
-                  </div>
+                  </div><!-- .panel-->
+
+                  <% if proof %>
+                  <div class="panel panel-default">
+                    <div class="panel-heading">
+                      <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion-<%= requirement.dashed_name %>" href="#collapse-<%= requirement.dashed_name %>-history">
+                          Evidence history/revisions
+                        </a>
+                      </h4>
+                    </div>
+                    <div id="collapse-<%= requirement.dashed_name %>-history" class="panel-collapse collapse">
+                      <div class="panel-body">
+                        <p>Updated <%= time_ago_in_words(proof.updated_at) %> ago</p>
+                      </div>
+                    </div>
+                  </div><!-- .panel-->
+                  <% end %>
 
                 </div>
               </div>
@@ -102,7 +119,6 @@
               <div class="col-md-6">
                 <h6>Screenshot of Evidence</h6>
                 <p><%= screenshot_for(requirement) %></p>
-                <small>Updated <%= time_ago_in_words(proof.updated_at) %> ago</small>
               </div>
               <div class="col-md-6">
                 <h6>Note (for your QSA)</h6>
