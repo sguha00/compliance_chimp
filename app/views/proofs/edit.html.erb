@@ -6,7 +6,7 @@
       <h3>Objective <%= @proof.requirement.name %></h3>
       <p><%= markdown(@proof.requirement.testing_procedure) %></p>
     </div>
-  </div><!--.row-->
+  </div><!-- .row-->
 
   <div class="row">
     <div class="col-md-7">
@@ -14,35 +14,51 @@
         <div class="panel panel-default">
           <div class="panel-heading">
             <h4 class="panel-title">
-              <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+              <a data-toggle="collapse" data-parent="#accordion-requirement" href="#collapse-requirement">
                 Requirement
               </a>
             </h4>
           </div>
-          <div id="collapseOne" class="panel-collapse collapse">
+          <div id="collapse-requirement" class="panel-collapse collapse">
             <div class="panel-body">
               <p class="lead"><%= markdown(@proof.requirement.description) %></p>
             </div>
           </div>
-        </div>
+        </div><!-- .panel-->
 
         <div class="panel panel-default">
           <div class="panel-heading">
             <h4 class="panel-title">
-              <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+              <a data-toggle="collapse" data-parent="#accordion-guidance" href="#collapse-guidance">
                 Guidance
               </a>
             </h4>
           </div>
-          <div id="collapseTwo" class="panel-collapse collapse">
+          <div id="collapse-guidance" class="panel-collapse collapse">
             <div class="panel-body">
               <p class="lead"><%= markdown(@proof.requirement.guidance) %></p>
             </div>
           </div>
-        </div>
+        </div><!-- .panel-->
+
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              <a data-toggle="collapse" data-parent="#accordion-history" href="#collapse-history">
+                Evidence history/revisions
+              </a>
+            </h4>
+          </div>
+          <div id="collapse-history" class="panel-collapse collapse">
+            <div class="panel-body">
+              <p>Updated <%= time_ago_in_words(@proof.updated_at) %> ago</p>
+            </div>
+          </div>
+        </div><!-- .panel-->
+
       </div>
     </div>
-  </div><!--.row-->
+  </div><!-- .row-->
 
   <div class="row">
     <div class="col-md-8">
@@ -67,7 +83,7 @@
             button_text: "Screenshot" %>
       </div>
     </div>
-  </div><!--.row-->
+  </div><!-- .row-->
 <br>
   <div class="row">
     <div class="col-md-8">
@@ -91,12 +107,11 @@
           requirement: @proof.requirement,
           proof: @proof,
           placeholder: true %>
-      <small>Updated <%= time_ago_in_words(@proof.updated_at) %> ago</small>
     </div>
     <div class="col-md-4">
       <%= form.button :submit, "Submit Evidence!",
           class: "btn btn-embossed btn-block btn-hg btn-primary" %>
     </div>
     <% end %>
-  </div><!--.row-->
-</div><!--.container-->
+  </div><!-- .row-->
+</div><!-- .container-->
