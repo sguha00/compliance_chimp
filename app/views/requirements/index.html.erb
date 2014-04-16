@@ -16,9 +16,9 @@
       <ul class="timeline">
       <% @requirements.each do |requirement| %>
         <% if proof = requirement.proof_for(current_user) %>
-        <li class="resolved pulse-container">
+        <li class="resolved">
         <% else %>
-        <li class="unresolved pulse-container">
+        <li class="unresolved">
         <% end %>
           <aside>
             <span data-role="requirement">

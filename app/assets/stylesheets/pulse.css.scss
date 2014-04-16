@@ -25,7 +25,7 @@
 }
 
 @media (min-width: 768px){
-  .pulse-container:hover .pulse{
+  .pulse-container:hover .pulse, .pulse:hover {
     -webkit-animation-duration: 1s;
        -moz-animation-duration: 1s;
         -ms-animation-duration: 1s;
